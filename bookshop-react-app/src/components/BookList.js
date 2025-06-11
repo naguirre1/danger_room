@@ -14,11 +14,15 @@ function BookList({ books }) {
       <ul>
         {books.map(book => (
           <li key={book.id} className="book-item">
-            <Link to={`/books/${book.id}`}>
-              <h3>{book.title}</h3>
+            <Link to={`/books/${book.id}`} className="book-item-link-wrapper">
+              <img src={book.imageUrl} alt={`Cover of ${book.title}`} className="book-item-image" />
+              <div className="book-item-details">
+                <h3>{book.title}</h3>
+                <p>by {book.author}</p>
+                <p>${book.price.toFixed(2)}</p>
+              </div>
             </Link>
-            <p>by {book.author}</p>
-            <p>${book.price.toFixed(2)}</p>
+            {/* Add to cart button or other actions might go here, outside the main link */}
           </li>
         ))}
       </ul>
