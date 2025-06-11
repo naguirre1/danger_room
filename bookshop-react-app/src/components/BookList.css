@@ -17,20 +17,49 @@
   box-shadow: 0 8px 8px 0 rgba(0,0,0,0.14), 0 12px 6px -8px rgba(0,0,0,0.12), 0 4px 20px 0 rgba(0,0,0,0.2); /* Increased elevation on hover - e.g., 8dp */
 }
 
-.book-list .book-item h3 { /* Card title */
+.book-list .book-item .book-item-link-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Ensure text content inherits color correctly */
+}
+
+.book-list .book-item .book-item-image {
+  width: 100px; /* Fixed width for the image */
+  height: 150px; /* Fixed height to match placeholder aspect ratio */
+  object-fit: cover; /* To ensure image covers the area without distortion */
+  margin-right: 16px; /* Space between image and text details */
+  border-radius: 4px; /* Optional: if you want rounded corners on the image itself */
+  flex-shrink: 0; /* Prevent image from shrinking if card space is tight */
+}
+
+.book-list .book-item .book-item-details {
+  flex-grow: 1; /* Allow text details to take remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.book-list .book-item .book-item-details h3 { /* Card title */
   font-size: 1.2rem; /* Adjust for Material type scale, e.g., Headline 6 or Subtitle 1 */
   font-weight: 500; /* Roboto Medium */
   color: #212121;
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px; /* Slightly reduce bottom margin */
+  border-bottom: none; /* Ensure no border line */
+  text-decoration: none; /* Be absolutely sure for the h3 itself */
 }
 
-/* Styling for other elements like author and price */
-.book-list .book-item p { /* Secondary text within cards */
+.book-list .book-item .book-item-details p { /* Secondary text within cards */
   color: #757575; /* Material secondary text color */
   font-size: 0.875rem; /* Body 2 */
-  margin-bottom: 16px;
+  margin-bottom: 8px; /* Adjust spacing between paragraphs */
+  line-height: 1.4;
 }
+
+.book-list .book-item .book-item-details p:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph in details */
+}
+
 
 /* Actions within cards (Text buttons) */
 .book-list .book-item .book-actions button {
