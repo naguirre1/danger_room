@@ -3,30 +3,50 @@
   list-style-type: none;
   padding: 0;
 }
-.book-list .book-item {
-  border: 1px solid #F0F0F0; /* Lighter, more subtle border */
-  margin-bottom: 15px; /* Slightly more spacing */
-  padding: 20px; /* More internal padding for a spacious feel */
-  border-radius: 4px; /* Consistent with button radius */
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Very subtle shadow for depth */
-  transition: box-shadow 0.2s ease-in-out;
+.book-list .book-item { /* Card style */
+  background-color: #FFFFFF; /* Surface color */
+  border-radius: 4px; /* Material card corner radius */
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); /* Standard Material card shadow - 2dp elevation */
+  margin-bottom: 16px; /* Spacing between cards */
+  padding: 16px; /* Internal padding for card content */
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1); /* Material motion for shadow changes */
+  border: none; /* Remove previous border, shadow defines the card */
 }
 
 .book-list .book-item:hover {
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Slightly more pronounced shadow on hover */
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.14), 0 12px 6px -8px rgba(0,0,0,0.12), 0 4px 20px 0 rgba(0,0,0,0.2); /* Increased elevation on hover - e.g., 8dp */
 }
 
-.book-list .book-item h3 {
+.book-list .book-item h3 { /* Card title */
+  font-size: 1.2rem; /* Adjust for Material type scale, e.g., Headline 6 or Subtitle 1 */
+  font-weight: 500; /* Roboto Medium */
+  color: #212121;
   margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.25rem; /* Adjust for good hierarchy */
-  color: #212529; /* Ensure primary text color */
+  margin-bottom: 8px;
 }
 
 /* Styling for other elements like author and price */
-.book-list .book-item p {
-  color: #6C757D; /* Secondary text color */
-  font-size: 0.9rem;
-  margin-bottom: 5px;
+.book-list .book-item p { /* Secondary text within cards */
+  color: #757575; /* Material secondary text color */
+  font-size: 0.875rem; /* Body 2 */
+  margin-bottom: 16px;
+}
+
+/* Actions within cards (Text buttons) */
+.book-list .book-item .book-actions button {
+  background-color: transparent;
+  color: #FF4081; /* Accent color */
+  box-shadow: none;
+  padding: 8px; /* Smaller padding for text buttons */
+  font-weight: 500;
+  text-transform: uppercase;
+  /* Ensure it inherits global button font and cursor, or define here */
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  border-radius: 4px; /* Consistent radius */
+  transition: background-color 0.3s ease; /* Smooth hover */
+}
+
+.book-list .book-item .book-actions button:hover {
+  background-color: rgba(255, 64, 129, 0.1); /* Accent color with low opacity for hover */
 }
