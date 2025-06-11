@@ -1,0 +1,14 @@
+/* bookshop-react-app/src/components/BookList.css */
+.book-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+.book-list .book-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+.book-list .book-item h3 {
+  margin-top: 0;
+}
