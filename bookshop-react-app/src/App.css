@@ -6,8 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f7f6; /* Light background for the body */
-  color: #333; /* Default text color */
 }
 
 .App {
@@ -15,46 +13,49 @@ body {
 }
 
 header {
-  background-color: #343a40; /* Darker header */
+  background-color: #FFFFFF;
+  color: #212529;
   padding: 20px 40px; /* More padding */
-  color: white;
   display: flex; /* For layout */
   justify-content: space-between; /* Space title and nav */
   align-items: center; /* Vertically align items */
-  border-bottom: 3px solid #007bff; /* Accent border */
+  border-bottom: 1px solid #F8F9FA; /* a very light border */
 }
 
 header h1 {
   margin: 0;
   font-size: 1.8em;
+  color: #212529;
 }
 
 header nav a {
-  color: #ffffff;
+  color: #007BFF;
   margin: 0 15px;
   text-decoration: none;
   font-size: 1.1em;
+  transition: color 0.2s ease-in-out;
 }
 
 header nav a:hover {
-  color: #007bff; /* Highlight on hover */
+  color: #0056b3; /* darker blue for hover */
   text-decoration: underline;
 }
 
 main {
-  padding: 20px;
+  padding: 20px; /* keep or adjust for rhythm */
   min-height: calc(100vh - 160px); /* Adjusted for potentially taller header/footer */
-  max-width: 1200px; /* Max width for content */
-  margin: 0 auto; /* Center content */
+  max-width: 1200px;
+  margin: 20px auto; /* add top/bottom margin for separation from header/footer */
   text-align: left; /* Align text to left for content areas */
+  background-color: #FFFFFF; /* ensure it's white if overridden elsewhere */
 }
 
 footer {
-  background-color: #343a40; /* Consistent with header */
-  color: white;
+  background-color: #FFFFFF;
+  color: #6C757D; /* medium grey for less emphasis */
   padding: 15px 0;
   text-align: center; /* Center footer text */
-  border-top: 1px solid #444;
+  border-top: 1px solid #F8F9FA;
   /* position: fixed; removed for now, can cause overlap, let it be at the bottom of content */
   /* bottom: 0; */
   width: 100%;
@@ -62,7 +63,7 @@ footer {
 
 /* General button styling (can be overridden by component styles) */
 button {
-  background-color: #007bff;
+  background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -70,9 +71,10 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 4px; /* slightly less rounded for a cleaner look */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-in-out; /* smoother transition */
+  font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
@@ -80,12 +82,14 @@ button:hover {
 }
 
 button.danger { /* For remove buttons etc. */
-    background-color: #dc3545;
+  background-color: #dc3545;
+  color: white;
 }
 button.danger:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #343a40; /* Darker headings */
+  color: #212529; /* ensure consistency */
+  font-family: 'Roboto', sans-serif; /* ensure consistency */
 }
