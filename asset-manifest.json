@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/danger_room/static/css/main.d67bafe9.css",
+    "main.css": "/danger_room/static/css/main.c4c2d622.css",
     "main.js": "/danger_room/static/js/main.a79c90ec.js",
     "static/js/453.67a72177.chunk.js": "/danger_room/static/js/453.67a72177.chunk.js",
     "index.html": "/danger_room/index.html",
-    "main.d67bafe9.css.map": "/danger_room/static/css/main.d67bafe9.css.map",
+    "main.c4c2d622.css.map": "/danger_room/static/css/main.c4c2d622.css.map",
     "main.a79c90ec.js.map": "/danger_room/static/js/main.a79c90ec.js.map",
     "453.67a72177.chunk.js.map": "/danger_room/static/js/453.67a72177.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d67bafe9.css",
+    "static/css/main.c4c2d622.css",
     "static/js/main.a79c90ec.js"
   ]
 }
