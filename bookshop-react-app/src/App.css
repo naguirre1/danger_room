@@ -1,0 +1,91 @@
+/* bookshop-react-app/src/App.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6; /* Light background for the body */
+  color: #333; /* Default text color */
+}
+
+.App {
+  text-align: center;
+}
+
+header {
+  background-color: #343a40; /* Darker header */
+  padding: 20px 40px; /* More padding */
+  color: white;
+  display: flex; /* For layout */
+  justify-content: space-between; /* Space title and nav */
+  align-items: center; /* Vertically align items */
+  border-bottom: 3px solid #007bff; /* Accent border */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+header nav a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+header nav a:hover {
+  color: #007bff; /* Highlight on hover */
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  min-height: calc(100vh - 160px); /* Adjusted for potentially taller header/footer */
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center content */
+  text-align: left; /* Align text to left for content areas */
+}
+
+footer {
+  background-color: #343a40; /* Consistent with header */
+  color: white;
+  padding: 15px 0;
+  text-align: center; /* Center footer text */
+  border-top: 1px solid #444;
+  /* position: fixed; removed for now, can cause overlap, let it be at the bottom of content */
+  /* bottom: 0; */
+  width: 100%;
+}
+
+/* General button styling (can be overridden by component styles) */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.danger { /* For remove buttons etc. */
+    background-color: #dc3545;
+}
+button.danger:hover {
+    background-color: #c82333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #343a40; /* Darker headings */
+}
