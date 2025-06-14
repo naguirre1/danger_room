@@ -3,12 +3,125 @@
   list-style-type: none;
   padding: 0;
 }
-.book-list .book-item {
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 4px;
+.book-list .book-item { /* Card style */
+  background-color: #FFFFFF; /* Surface color */
+  border-radius: 4px; /* Material card corner radius */
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); /* Standard Material card shadow - 2dp elevation */
+  margin-bottom: 16px; /* Spacing between cards */
+  padding: 16px; /* Internal padding for card content */
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1); /* Material motion for shadow changes */
+  border: none; /* Remove previous border, shadow defines the card */
 }
-.book-list .book-item h3 {
+
+.book-list .book-item:hover {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.14), 0 12px 6px -8px rgba(0,0,0,0.12), 0 4px 20px 0 rgba(0,0,0,0.2); /* Increased elevation on hover - e.g., 8dp */
+}
+
+/* More specific selector for the link wrapper */
+.book-list li.book-item a.book-item-link-wrapper {
+  display: flex !important;
+  align-items: flex-start !important; /* Align items to the top */
+  text-decoration: none !important; /* Remove underline from link */
+  color: inherit !important; /* Ensure text content inherits color correctly */
+  border-bottom: none !important; /* Also apply here to be extremely thorough */
+  overflow: visible !important; /* Ensure content isn't clipped if sized unexpectedly */
+}
+
+/* Fallback for the existing less specific rule, ensuring it also has !important and overflow */
+.book-list .book-item .book-item-link-wrapper {
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none !important;
+  color: inherit;
+  border-bottom: none !important;
+  overflow: visible !important;
+}
+
+/* Styles for the image, using a highly specific selector for debugging */
+.book-list li.book-item a.book-item-link-wrapper img.book-item-image {
+  display: block !important;
+  width: 100px !important;
+  height: 150px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  object-fit: cover !important;
+  margin-right: 16px !important; /* from previous styling */
+  border-radius: 4px !important; /* from previous styling */
+  flex-shrink: 0 !important;
+  outline: 7px solid limegreen !important;
+  background-color: yellow !important;
+}
+
+/* Fallback for existing, less specific image rule, including debugging styles */
+.book-list .book-item .book-item-image {
+  display: block !important;
+  width: 100px !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  margin-right: 16px !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  outline: 7px solid limegreen !important;
+  background-color: yellow !important;
+}
+
+.book-list .book-item .book-item-details {
+  flex-grow: 1; /* Allow text details to take remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+/* More specific selector for H3 */
+.book-list li.book-item a.book-item-link-wrapper div.book-item-details h3 {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: #212121 !important;
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Fallback for the existing less specific H3 rule */
+.book-list .book-item .book-item-details h3 { /* Card title */
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #212121;
   margin-top: 0;
+  margin-bottom: 4px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.book-list .book-item .book-item-details p { /* Secondary text within cards */
+  color: #757575; /* Material secondary text color */
+  font-size: 0.875rem; /* Body 2 */
+  margin-bottom: 8px; /* Adjust spacing between paragraphs */
+  line-height: 1.4;
+}
+
+.book-list .book-item .book-item-details p:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph in details */
+}
+
+
+/* Actions within cards (Text buttons) */
+.book-list .book-item .book-actions button {
+  background-color: transparent;
+  color: #FF4081; /* Accent color */
+  box-shadow: none;
+  padding: 8px; /* Smaller padding for text buttons */
+  font-weight: 500;
+  text-transform: uppercase;
+  /* Ensure it inherits global button font and cursor, or define here */
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  border-radius: 4px; /* Consistent radius */
+  transition: background-color 0.3s ease; /* Smooth hover */
+}
+
+.book-list .book-item .book-actions button:hover {
+  background-color: rgba(255, 64, 129, 0.1); /* Accent color with low opacity for hover */
 }

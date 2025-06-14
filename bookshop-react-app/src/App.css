@@ -6,8 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f7f6; /* Light background for the body */
-  color: #333; /* Default text color */
 }
 
 .App {
@@ -15,46 +13,55 @@ body {
 }
 
 header {
-  background-color: #343a40; /* Darker header */
-  padding: 20px 40px; /* More padding */
-  color: white;
+  background-color: #607D8B; /* Primary Color */
+  color: #FFFFFF; /* Text on dark background */
+  padding: 16px 24px; /* Typical Material padding */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Standard Material elevation for AppBars */
+  border-bottom: none; /* Shadow provides separation */
   display: flex; /* For layout */
   justify-content: space-between; /* Space title and nav */
   align-items: center; /* Vertically align items */
-  border-bottom: 3px solid #007bff; /* Accent border */
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8em;
+  color: #FFFFFF;
+  font-size: 1.25rem; /* Material title size */
+  font-weight: 500; /* Roboto Medium */
 }
 
 header nav a {
-  color: #ffffff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 1.1em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 500; /* Roboto Medium */
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin: 0 15px; /* existing margin */
+  text-decoration: none; /* existing */
+  font-size: 1.1em; /* existing, or adjust if needed */
 }
 
 header nav a:hover {
-  color: #007bff; /* Highlight on hover */
-  text-decoration: underline;
+  background-color: rgba(255,255,255,0.1); /* Subtle hover for dark background */
+  text-decoration: underline; /* existing */
 }
 
 main {
-  padding: 20px;
-  min-height: calc(100vh - 160px); /* Adjusted for potentially taller header/footer */
-  max-width: 1200px; /* Max width for content */
-  margin: 0 auto; /* Center content */
+  background-color: #FAFAFA; /* Ensure consistency with body */
+  padding: 16px; /* Material uses 8dp grid, so 16 or 24 */
+  margin: 0 auto; /* Keep it centered */
+  max-width: 1200px;
+  min-height: calc(100vh - 160px); /* Keep existing */
   text-align: left; /* Align text to left for content areas */
 }
 
 footer {
-  background-color: #343a40; /* Consistent with header */
-  color: white;
-  padding: 15px 0;
-  text-align: center; /* Center footer text */
-  border-top: 1px solid #444;
+  background-color: #FFFFFF; /* Keep it light or match AppBar if preferred */
+  color: #757575; /* Secondary text color */
+  border-top: 1px solid #E0E0E0; /* Material divider */
+  padding: 16px 24px;
+  text-align: center;
   /* position: fixed; removed for now, can cause overlap, let it be at the bottom of content */
   /* bottom: 0; */
   width: 100%;
@@ -62,30 +69,64 @@ footer {
 
 /* General button styling (can be overridden by component styles) */
 button {
-  background-color: #007bff;
+  background-color: #FF4081; /* Accent Color for primary actions */
   color: white;
   border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 8px 16px; /* Material button padding */
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Subtle button elevation */
+  text-transform: uppercase;
+  font-weight: 500; /* Roboto Medium */
+  font-size: 0.875rem;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  line-height: 1.75;
+  cursor: pointer; /* Keep existing cursor */
+  font-family: 'Roboto', sans-serif; /* Keep existing font */
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.4); /* Ripple color */
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  transition: none; /* No transition on the base state */
+}
+
+button:active::after {
+  opacity: 1;
+  transform: scale(120) translate(-50%, -50%); /* Scale factor might need adjustment */
+  transition: transform 0.6s cubic-bezier(.25,.8,.25,1), opacity 0.8s cubic-bezier(.25,.8,.25,1);
 }
 
 button:hover {
-  background-color: #0056b3;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* Increased elevation on hover */
+  background-color: #F50057; /* Slightly darker accent */
+}
+
+button:focus {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 4px 5px rgba(0,0,0,0.20);
+  outline: none;
 }
 
 button.danger { /* For remove buttons etc. */
-    background-color: #dc3545;
+  background-color: #F44336; /* Material Red */
+  color: white;
 }
 button.danger:hover {
-    background-color: #c82333;
+  background-color: #D32F2F;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #343a40; /* Darker headings */
+  color: #212121;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* Default to regular, components can specify medium */
 }

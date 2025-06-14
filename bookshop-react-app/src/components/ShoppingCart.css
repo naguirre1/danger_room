@@ -3,20 +3,62 @@
   list-style-type: none;
   padding: 0;
 }
-.shopping-cart .cart-item {
+.shopping-cart .cart-item { /* Treat as a list item or a flat card */
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E0E0E0; /* Material divider between items */
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 4px;
+  margin-bottom: 0; /* If using borders */
+  border-radius: 0; /* If using borders */
+  box-shadow: none; /* If using borders */
 }
-.shopping-cart .cart-item h3 {
+
+.shopping-cart .cart-item:last-child {
+  border-bottom: none; /* If using borders */
+}
+
+.shopping-cart .cart-item h3 { /* Item title */
+  font-size: 1rem; /* Subtitle 1 or Body 1 */
+  font-weight: 500;
+  color: #212121;
   margin: 0;
-  font-size: 1.1em;
 }
-/* REMOVED button specific styling:
+
+/* Style for item price/details within .cart-item */
+.shopping-cart .cart-item .item-details p {
+  margin: 4px 0; /* Adjust spacing */
+  font-size: 0.875rem; /* Body 2 */
+}
+.shopping-cart .cart-item .item-details .price {
+  color: #212121; /* Primary info */
+  font-weight: 500; /* Medium for emphasis if needed */
+}
+.shopping-cart .cart-item .item-details .quantity {
+  color: #757575; /* Secondary info */
+}
+
+/* Buttons within cart items (e.g., "Remove") */
+.shopping-cart .cart-item button { /* Text button style for remove */
+  color: #F44336; /* Material Red for destructive actions */
+  background-color: transparent;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8px;
+  border: none; /* Ensure no border from global styles if not wanted */
+  border-radius: 4px; /* Standard radius */
+  cursor: pointer; /* Ensure cursor is pointer */
+  transition: background-color 0.3s ease; /* Smooth hover */
+  font-family: 'Roboto', sans-serif; /* Ensure font consistency */
+}
+
+.shopping-cart .cart-item button:hover {
+  background-color: rgba(244, 67, 54, 0.1); /* Red with low opacity for hover */
+}
+/* Ensure the original REMOVED comment block for buttons is handled or removed */
+/* Original REMOVED button specific styling:
 .shopping-cart .cart-item button {
   padding: 5px 10px;
   background-color: #dc3545;
@@ -29,7 +71,15 @@
   background-color: #c82333;
 }
 */
-.shopping-cart h3 { /* For Total */
-  margin-top: 20px;
+
+.shopping-cart .total-section h3 { /* For Total */
+  font-size: 1.25rem; /* Headline 6 or Subtitle 1 */
+  font-weight: 500;
+  color: #212121;
+  margin-top: 24px;
   text-align: right;
+  padding: 16px;
+  background-color: #FFFFFF; /* Optional: give it a slight surface color */
+  border-top: 1px solid #E0E0E0;
+  margin-bottom: 0; /* Reset margin if it's the last element */
 }
